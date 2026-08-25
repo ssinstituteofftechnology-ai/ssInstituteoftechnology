@@ -161,6 +161,77 @@
             Start your career with practical surveying skills.
         </p>
 
+        <a href="#admission-form" class="btn">
+            Apply Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="admission-form" class="section form-section">
+
+    <div class="container">
+
+        <p class="section-title">ADMISSION FORM</p>
+
+        <h2>Apply for Survey Training</h2>
+
+        <p>
+            Please fill in your details. We will contact you shortly.
+        </p>
+
+        <form id="admissionForm">
+
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label>Select Course</label>
+            <select id="course" required>
+                <option value="">-- Select Course --</option>
+                <option>Total Station</option>
+                <option>RTK GPS</option>
+                <option>Auto Level</option>
+                <option>AutoCAD</option>
+                <option>Civil 3D</option>
+                <option>Road & Contour Survey</option>
+                <option>Complete Survey Training</option>
+            </select>
+
+            <label>Place</label>
+            <input type="text" id="place" placeholder="Enter your place">
+
+            <label>Message</label>
+            <textarea id="message" rows="4"
+                placeholder="Any questions or requirements"></textarea>
+
+            <button type="submit" class="btn">
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    <div class="container">
+
+        <p class="section-title">ADMISSIONS OPEN</p>
+
+        <h2>90 Days Professional Survey Training</h2>
+
+        <p>
+            Start your career with practical surveying skills.
+        </p>
+
         <a href="#contact" class="btn">Apply Now</a>
 
     </div>
@@ -219,6 +290,35 @@
 
 </footer>
 
+<script>
 
+document.getElementById("admissionForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const course = document.getElementById("course").value;
+    const place = document.getElementById("place").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappMessage =
+        "NEW ADMISSION ENQUIRY%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Course: " + encodeURIComponent(course) + "%0A" +
+        "Place: " + encodeURIComponent(place) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+    const whatsappURL =
+        "https://wa.me/919544477556?text=" + whatsappMessage;
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+</script>
 </body>
 </html>
